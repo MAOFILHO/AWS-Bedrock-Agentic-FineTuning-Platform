@@ -369,10 +369,12 @@ Expected: allowlist tests pass; the dry-run prints the planned node sequence
       monorepo convention, are `paths:`-scoped to this project's folder, and set
       `working-directory` on every job. Repository variables are prefixed `BEDROCK_PLATFORM_*` to
       avoid collisions in shared monorepo settings.
+      *Update 2026-10-21:* extracted into its own repo (`MAOFILHO/AWS-Bedrock-Agentic-FineTuning-Platform`); the workflows now live in
+      `.github/workflows/` unscoped, and the `BEDROCK_PLATFORM_*` variable names are unchanged.
 - [x] **8.5** *(added beyond the original contract, at the user's request — 2026-08-10)*
       `modules/github_oidc` — read-only GitHub Actions OIDC role for `terraform plan`. No long-lived
       AWS keys. Trust policy pins **both** `aud` and `sub`
-      (`repo:MAOFILHO/Portfolio-Projects:ref:refs/heads/main`); omitting `sub` would let any
+      (`repo:MAOFILHO/Portfolio-Projects:ref:refs/heads/main` at the time; now `repo:MAOFILHO/AWS-Bedrock-Agentic-FineTuning-Platform:ref:refs/heads/main`); omitting `sub` would let any
       repository on GitHub assume the role. Every allow statement is a read verb, plus an explicit
       `DenyAllMutations` that no later policy attachment can override. Opt-in via
       `enable_github_oidc`, set in `infra/terraform/terraform.tfvars` so a plain plan does not

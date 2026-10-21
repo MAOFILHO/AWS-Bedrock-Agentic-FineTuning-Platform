@@ -62,7 +62,7 @@ conformity to the contract, which was invisible while the schema only described 
 - **Workflows in `<project>/.github/workflows/` never run in a monorepo.** GitHub reads only the
   repository root. No error, no warning — they simply never fire. Now kept in
   `.github/workflows-for-monorepo-root/`, deliberately not a real workflows path, so they cannot look
-  installed when they are not.
+  installed when they are not. (Since extraction into its own repo, they live in `.github/workflows/`.)
 - **`make setup` never installed the project.** A fresh clone passed lint and mypy (both path-based)
   and failed every test on import. Hidden for the whole build by a one-off `pip install -e .`.
 - **Moving the folder broke the venv** — console scripts carry absolute shebangs. The claim that the

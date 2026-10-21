@@ -10,4 +10,6 @@
 
 enable_github_oidc = true
 github_owner       = "MAOFILHO"
-github_repo        = "Portfolio-Projects"
+# Repo the plan role trusts. Applying this moves the OIDC trust from the old
+# Portfolio-Projects monorepo to this repo (an IAM change) — apply deliberately.
+github_repo = "AWS-Bedrock-Agentic-FineTuning-Platform"
